@@ -1,12 +1,19 @@
 fun main(){
     val myFirstDice = First(6)
     val diceRoll = myFirstDice.roll()
+    val luckyNumber = 4
 
-    println("Your ${myFirstDice.sides} sided dice rolled ${diceRoll}")
+//use of conditional statements
+    when (diceRoll){
+        luckyNumber -> println("You Won!")
+        1 -> println("")
+        2 -> println("So sorry you rolled a 1. Try again!")
+        3 -> println("Sadly, you rolled a 2. Try again!")
+        4 -> println("Unfortunately you rolled a 3. Try again!")
+        5 -> println("Don't cry! You rolled a 5. Try again!")
+        6 -> println("Apologies! you rolled a 6. Try again")
+    }
 
-    //Replace the printing of diceRoll with printing the result of calling the roll() method on myFirstDice
-    val mySecondDice = First(20)
-    println("Your ${mySecondDice.sides} sided dice rolled ${diceRoll}")
 }
 //Modify the Dice class definition to accept an integer called numSides. The code inside your class does not change.
 class First(val  numSides: Int) {
