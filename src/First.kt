@@ -13,6 +13,7 @@ class First(val  numSides: Int) {
     var sides = 6
 
     fun roll(): Int{
+        //Change the return statement to return the random number directly.
         return (1..sides).random()
     }
 }
