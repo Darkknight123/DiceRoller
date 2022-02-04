@@ -26,7 +26,7 @@ fun main(){
 
 
     //A subclass of Dwelling it inherits from it
-    class RoundHut(residents:Int):Dwelling(residents){
+    open class RoundHut(residents:Int):Dwelling(residents){
 
         override val buildingMaterial = "Straw"
         override val capacity = 4
@@ -36,6 +36,23 @@ fun main(){
     val roundHut = RoundHut(3)
 
     with(roundHut){
+        println("\nRoundHut\n=======")
+        println("Capacity:${capacity}")
+        println("Material:${buildingMaterial}")
+        println("Has Room?: ${hasRoom()}")
+    }
+
+    //roundtower subclass
+    open class RoundTower(residents:Int, val floors: Int=2):RoundHut(residents){
+        override val buildingMaterial = "Stone"
+        override val capacity = 4
+
+    }
+
+    //instace of roundTower
+    val roundTower = RoundTower(4)
+
+    with(roundTower){
         println("\nRoundHut\n=======")
         println("Capacity:${capacity}")
         println("Material:${buildingMaterial}")
